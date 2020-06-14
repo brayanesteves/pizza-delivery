@@ -1,0 +1,40 @@
+<header>
+  <div class="logo">
+    <h1 class="logo-text"><span>INNOSCRIPTA</span></h1>
+  </div>
+  <i class="fa fa-bars menu-toggle"></i>
+    <ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/cmds">Order Food</a></li>
+      {{#if user}}
+      <li><a href="/cmds/myorder" class="logout">My Order</a></li>  
+      {{/if}}         
+      <li>
+        <a href="#"><i class="fa fa-user"></i>Acount<i class="fa fa-chevron-down" style="font-size:.8em;"></i></a>
+        <ul>
+          {{#if user}}
+          <li><a href="/logout" class="logout">Logout</a></li>          
+          {{else}}
+          <li><a href="/signin">Login</a></li>
+          <li><a href="/signup">Register</a></li>
+          {{/if}}
+        </ul>        
+      </li>
+      
+        <li>
+          <a href="#"><i class="fa fa-shopping-cart"></i></a>
+          <ul>
+            {{# if session.cart.totalItems }}
+            {{# each session.cart.items }}
+            <li>{{ this.item.NmbrCmd }} | {{ this.quantity }}</li>
+            {{/each}}
+            {{/if}}
+            <li>Total: {{ session.cart.totalPrice }}$ | {{ session.cart.totalPriceEuros }}€</li>
+            <li><a href="cmds/prcd" class="">Procceed</a></li>
+          </ul>
+        </li>
+      
+
+    </ul>
+       
+</header>

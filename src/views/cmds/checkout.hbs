@@ -1,0 +1,39 @@
+<section id="checkout" class="checkout">
+    <form action="/cmds/pay" method="post">
+        <div class="wrapper">
+            <div class="checkout_wrapper">
+                <div class="product_info">
+                <img src="/img/pizza.png" alt="product">
+                <div class="content">
+                    <h3>Pizza<br/>INNOSCRPTA</h3>
+                    <p>{{totalPrice}}$</p>
+                </div>
+                </div>
+                <div class="checkout_form">
+                <p>Payment Section</p>
+                <div class="details">
+                    <div class="section">
+                    <input type="text" placeholder="Card Number">
+                    </div>
+                    <div class="section">
+                    <input type="text" placeholder="Cardholder Name">
+                    </div>
+                    <div class="section last_section">
+                    <div class="item">
+                        <input type="text" placeholder="Expiry Date">
+                    </div>
+                    <div class="item">
+                        <input type="text" placeholder="CVV">
+                    </div>
+                    </div>
+                    
+                    <div class="btn">
+                        <button class="">Pay</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    
+</section>

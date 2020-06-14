@@ -1,0 +1,42 @@
+<section id="todo-list-card">
+    <h1>{{title}}</h1>
+    
+    {{#if products }}
+    <div class="container-card">
+        {{# each products }}
+        <div class="card">
+
+            <div class="img">
+                <img src="{{ this.item.Imgn }}" alt="">
+            </div>
+
+            <div class="top-text">
+                <div class="name">{{ this.item.NmbrCmd }}</div>
+                <p>{{ this.quantity }}</p>
+                <p>Total Dolars: {{ this.price_dolar }}</p>
+                <p>Total Euros: {{ this.price_euro }}</p>
+            </div>
+            
+            <div class="bottom-text">
+                <div class="text">{{{this.item.Dtlls}}}</div>
+                <div class="btn-action">
+                    <a href="/cmds/remove-order/{{this.item.Rfrnc}}">Remove</a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+        
+    </div>
+    <div class="text-right">
+        <strong>Total Dolares: {{ totalPrice }}</strong>
+        <strong>Total Euros: {{ totalPriceEuros }}</strong>
+    </div>
+        <hr>
+        <div class="text-right">
+            <a href="/cmds/checkout" type="button" class="btn-checkout">Checkout</a>
+        </div>        
+        {{else}}
+            Your shopping cart is empty..
+        {{/if}}
+</section>
+

@@ -1,0 +1,27 @@
+<section id="todo-list-card">
+    <div class="container-card">
+        {{#each myorder }}
+        <div class="card">
+
+            <div class="img">
+                <img src="{{ Imgn }}" alt="">
+            </div>
+
+            <div class="top-text">
+                <div class="name">{{NmbrCmd}}</div>
+                <p>{{Cntdd}}</p>
+                <p>Total Dolars: {{price_dolar}}</p>
+                <p>Total Euros: {{price_euro}}</p>
+            </div>
+            
+            <div class="bottom-text">
+                <div class="text">{{{Dtlls}}}</div>                
+            </div>
+        </div>        
+    </div>
+       
+        {{else}}
+            No Order
+         {{/each}}
+</section>
+

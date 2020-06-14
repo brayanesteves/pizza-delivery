@@ -1,0 +1,38 @@
+<section id="list-products" class="list-products">
+
+    <div class="container">
+        <div class="row">
+
+            {{#each cmds}}
+            <div class="col-md-3">
+
+                <div class="card">
+                    <div class="top-section">
+                        <!--  <IMAGÉN PRINCIPAL>  -->
+                        <img id="image-container" src="{{Imgn}}" alt="">
+                        <div class="price_dolar">{{Prc_Dlrs}}</div>
+                        <div class="price_euro">{{Prc_Ers}}</div>
+                    </div>
+
+                    <div class="product-info">
+                        <div class="name">{{NmbrCmd}}</div>
+                        <div class="dis">{{Dtlls}}</div>
+                        <a id="add-to-cart" class="btn add-to-cart" href="/cmds/add/{{ Rfrnc }}">Add to Cart</a>
+                    </div>
+                </div>
+
+            </div>
+
+            {{else}}
+            <div class="col-md-4 mx-auto">
+                <div class="card card-body text-center">
+                    <p>No pizza</p>                    
+                </div>
+            </div>
+            {{/each}}
+            
+
+        </div>
+    </div>
+    
+</section>
